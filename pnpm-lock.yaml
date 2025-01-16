@@ -28,7 +28,7 @@ importers:
         version: 0.6.1
       '@triforce-heroes/triforce-core':
         specifier: github:triforce-heroes/triforce-core
-        version: https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/1450c618709a17f7be8ad2dbc738173538f9be4f(@aws-sdk/client-dynamodb@3.616.0)(@aws-sdk/client-s3@3.616.0)(@aws-sdk/credential-providers@3.616.0(@aws-sdk/client-sso-oidc@3.616.0(@aws-sdk/client-sts@3.616.0)))(@aws-sdk/util-dynamodb@3.616.0(@aws-sdk/client-dynamodb@3.616.0))(commander@13.0.0)
+        version: https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/fb6ebfcc4bfd836ff20662257d84cc3fab26d255(@aws-sdk/client-dynamodb@3.616.0)(@aws-sdk/client-s3@3.616.0)(@aws-sdk/credential-providers@3.616.0(@aws-sdk/client-sso-oidc@3.616.0(@aws-sdk/client-sts@3.616.0)))(@aws-sdk/util-dynamodb@3.616.0(@aws-sdk/client-dynamodb@3.616.0))(commander@13.0.0)
       '@types/node':
         specifier: ^22.10.7
         version: 22.10.7
@@ -1172,15 +1172,15 @@ packages:
   '@total-typescript/ts-reset@0.6.1':
     resolution: {integrity: sha512-cka47fVSo6lfQDIATYqb/vO1nvFfbPw7uWLayIXIhGETj0wcOOlrlkobOMDNQOFr9QOafegUPq13V2+6vtD7yg==}
 
-  '@triforce-heroes/triforce-core@https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/1450c618709a17f7be8ad2dbc738173538f9be4f':
-    resolution: {tarball: https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/1450c618709a17f7be8ad2dbc738173538f9be4f}
+  '@triforce-heroes/triforce-core@https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/fb6ebfcc4bfd836ff20662257d84cc3fab26d255':
+    resolution: {tarball: https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/fb6ebfcc4bfd836ff20662257d84cc3fab26d255}
     version: 1.0.0
     peerDependencies:
-      '@aws-sdk/client-dynamodb': ^3.616.0
-      '@aws-sdk/client-s3': ^3.616.0
-      '@aws-sdk/credential-providers': ^3.616.0
-      '@aws-sdk/util-dynamodb': ^3.616.0
-      commander: ^12.1.0
+      '@aws-sdk/client-dynamodb': ^3.726.1
+      '@aws-sdk/client-s3': ^3.729.0
+      '@aws-sdk/credential-providers': ^3.729.0
+      '@aws-sdk/util-dynamodb': ^3.726.1
+      commander: ^13.0.0
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -4433,7 +4433,7 @@ snapshots:
 
   '@total-typescript/ts-reset@0.6.1': {}
 
-  '@triforce-heroes/triforce-core@https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/1450c618709a17f7be8ad2dbc738173538f9be4f(@aws-sdk/client-dynamodb@3.616.0)(@aws-sdk/client-s3@3.616.0)(@aws-sdk/credential-providers@3.616.0(@aws-sdk/client-sso-oidc@3.616.0(@aws-sdk/client-sts@3.616.0)))(@aws-sdk/util-dynamodb@3.616.0(@aws-sdk/client-dynamodb@3.616.0))(commander@13.0.0)':
+  '@triforce-heroes/triforce-core@https://codeload.github.com/triforce-heroes/triforce-core/tar.gz/fb6ebfcc4bfd836ff20662257d84cc3fab26d255(@aws-sdk/client-dynamodb@3.616.0)(@aws-sdk/client-s3@3.616.0)(@aws-sdk/credential-providers@3.616.0(@aws-sdk/client-sso-oidc@3.616.0(@aws-sdk/client-sts@3.616.0)))(@aws-sdk/util-dynamodb@3.616.0(@aws-sdk/client-dynamodb@3.616.0))(commander@13.0.0)':
     dependencies:
       '@aws-sdk/client-dynamodb': 3.616.0
       '@aws-sdk/client-s3': 3.616.0
