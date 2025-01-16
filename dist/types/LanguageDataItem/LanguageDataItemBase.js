@@ -1,0 +1,1 @@
+export class LanguageDataItemBase{constructor(e,s,a,t){this.reference=e,this.projectName=s,this.messageId=a,this.messageName=t}}

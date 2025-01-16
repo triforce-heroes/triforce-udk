@@ -18,10 +18,12 @@ describe("LanguageDataItem class", () => {
   sampleSingleBuilder.pad(4);
   sampleSingleBuilder.writeLengthPrefixedString("NewText_60", 4);
   sampleSingleBuilder.pad(4);
-  sampleSingleBuilder.writeLengthPrefixedString("Example Message", 4);
+  sampleSingleBuilder.writeLengthPrefixedString("Ação", 4);
   sampleSingleBuilder.pad(4);
   sampleSingleBuilder.writeUnsignedInt32(123);
-  sampleSingleBuilder.writeString("1234567812345678");
+  sampleSingleBuilder.writeLengthPrefixedString("Context", 4);
+  sampleSingleBuilder.pad(4);
+  sampleSingleBuilder.writeString("12345678");
 
   const sampleSingleBuffer = sampleSingleBuilder.build();
 
@@ -30,8 +32,9 @@ describe("LanguageDataItem class", () => {
     "dk3ds",
     123,
     "NewText_60",
-    "Example Message",
-    Buffer.from("1234567812345678"),
+    "Ação",
+    "Context",
+    Buffer.from("12345678"),
   );
 
   it("from(SingleLanguageDataItem)", () => {

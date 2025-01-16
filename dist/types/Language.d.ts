@@ -1,0 +1,15 @@
+export declare enum Language {
+    ENGLISH_EUROPE = 0,
+    FRENCH_EUROPE = 1,
+    SPANISH_EUROPE = 2,
+    GERMAN = 3,
+    ITALIAN = 4,
+    JAPONESE = 6,
+    ENGLISH_AMERICA = 7,
+    FRENCH_AMERICA = 8,
+    SPANISH_AMERICA = 9,
+    DUTCH = 10,
+    CHINESE_SIMPLIFIED = 12,
+    CHINESE_TRADITIONAL = 13,
+    KOREAN = 14
+}

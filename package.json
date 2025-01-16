@@ -6,13 +6,11 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": {
-    "triforce-udk": "dist/command.js"
-  },
+  "files": [
+    "dist"
+  ],
   "exports": {
-    ".": "./dist/index.js",
-    "./Extract": "./dist/Extract.js",
-    "./FileSystem": "./dist/FileSystem.js"
+    ".": "./dist/index.js"
   },
   "scripts": {
     "build": "rimraf ./dist && tsc -p ./tsconfig.build.json && swc ./dist -d .",
