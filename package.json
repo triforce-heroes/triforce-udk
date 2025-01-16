@@ -1,0 +1,52 @@
+{
+  "name": "@triforce-heroes/triforce-udk",
+  "description": "Extract and rebuild UDK files.",
+  "version": "1.0.0",
+  "license": "Apache License 2.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "triforce-udk": "dist/command.js"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./Extract": "./dist/Extract.js",
+    "./FileSystem": "./dist/FileSystem.js"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc -p ./tsconfig.build.json && swc ./dist -d .",
+    "udk": "node ./dist/command.js",
+    "udk:watch": "tsx watch ./src/command.ts",
+    "prettier": "prettier --check ./src ./tests",
+    "prettier:fix": "prettier --write ./src ./tests",
+    "eslint": "eslint ./src ./tests",
+    "eslint:fix": "eslint --fix ./src ./tests",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.18.0",
+    "@stylistic/eslint-plugin": "^2.13.0",
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.10.7",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@triforce-heroes/triforce-core": "github:triforce-heroes/triforce-core",
+    "@types/node": "^22.10.7",
+    "@vitest/eslint-plugin": "^1.1.25",
+    "commander": "^13.0.0",
+    "eslint": "^9.18.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-regexp": "^2.7.0",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^15.14.0",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0",
+    "vitest": "^3.0.0"
+  }
+}
