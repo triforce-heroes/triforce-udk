@@ -1,8 +1,14 @@
 import { BufferBuilder } from "@triforce-heroes/triforce-core/BufferBuilder";
 
+import { MultipleLanguageDataItem } from "./LanguageDataItem/MultipleLanguageDataItem.js";
+import { SingleLanguageDataItem } from "./LanguageDataItem/SingleLanguageDataItem.js";
+
+import type { LanguageDataItemBase } from "./LanguageDataItem/LanguageDataItemBase.js";
 import type { BufferConsumer } from "@triforce-heroes/triforce-core/BufferConsumer";
 
 export class LanguageData {
+  public items = new Map<number, SingleLanguageDataItem>();
+
   public constructor(
     public reference: bigint,
     public projectName: string,
@@ -58,5 +64,29 @@ export class LanguageData {
     }
 
     return builder.build();
+  }
+
+  public fill(items: Map<bigint, LanguageDataItemBase>) {
+    for (const reference of this.references) {
+      const item = items.get(reference)!;
+
+      if (item instanceof SingleLanguageDataItem) {
+        this.items.set(item.messageId, item);
+      } else if (item instanceof MultipleLanguageDataItem) {
+        const subItem = items.get(
+          item.references.at(0)!,
+        )! as SingleLanguageDataItem;
+
+        this.items.set(subItem.messageId, subItem);
+      }
+    }
+  }
+
+  public setMessage(messageId: number, message: string) {
+    const item = this.items.get(messageId);
+
+    if (item instanceof SingleLanguageDataItem) {
+      item.message = message;
+    }
   }
 }

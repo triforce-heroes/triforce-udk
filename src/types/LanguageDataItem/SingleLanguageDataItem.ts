@@ -11,6 +11,7 @@ export class SingleLanguageDataItem extends LanguageDataItemBase {
     messageId: number,
     messageName: string,
     public message: string,
+    public messageContext: string,
     public properties: Buffer,
   ) {
     super(reference, projectName, messageId, messageName);
@@ -29,13 +30,17 @@ export class SingleLanguageDataItem extends LanguageDataItemBase {
 
     const messageId = consumer.readUnsignedInt32();
 
+    const messageContext = consumer.readLengthPrefixedString(4);
+    consumer.skipPadding(4);
+
     return new SingleLanguageDataItem(
       reference,
       projectName,
       messageId,
       messageName,
       message,
-      consumer.read(16),
+      messageContext,
+      consumer.read(8),
     );
   }
 
@@ -54,6 +59,8 @@ export class SingleLanguageDataItem extends LanguageDataItemBase {
     builder.writeLengthPrefixedString(this.message, 4);
     builder.pad(4);
     builder.writeUnsignedInt32(this.messageId);
+    builder.writeLengthPrefixedString(this.messageContext, 4);
+    builder.pad(4);
     builder.push(this.properties);
 
     return builder.build();

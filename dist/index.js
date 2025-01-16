@@ -1,0 +1,1 @@
+export{LocalizationSystem}from"./LocalizationSystem.js";
